@@ -17,6 +17,7 @@ public class ChromeSettings {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         //добавить из обработку из файла
         driver.get("https://rozetka.com.ua/");
     }

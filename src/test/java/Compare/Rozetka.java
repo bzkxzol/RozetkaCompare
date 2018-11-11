@@ -10,7 +10,6 @@ import settings.ChromeSettings;
 
 public class Rozetka extends ChromeSettings {
 
-
     @Test
     public void compareSSDNotebooks() {
         MainPage mainPage = new MainPage(driver);
@@ -19,7 +18,7 @@ public class Rozetka extends ChromeSettings {
         ComparisonPage comparisonPage = ssdNotebooksMarketPage.compareTwoItems();
         int allParameters = comparisonPage.countDiffers();
         int onlyDifferent = comparisonPage.countOnlyDifferentMode();
-        Assert.assertEquals(allParameters, onlyDifferent, "Number of parameters are equals!");
+        Assert.assertEquals(allParameters, onlyDifferent, "Number of different parameters are not equals!");
     }
 
 }
