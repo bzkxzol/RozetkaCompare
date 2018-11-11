@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
 
-public class MainPage implements IPage{
+public class MainPage implements IPage {
 
     @FindBy(xpath = ".//*[@menu_id='2416']")
     private WebElement noteBookAndComputersCategory;
@@ -25,19 +25,20 @@ public class MainPage implements IPage{
         helpActions = new HelpActions(driver);
     }
 
-    private void moveToNotebookCategory(){
+    private void moveToNotebookCategory() {
         helpActions.moveToElement(noteBookAndComputersCategory);
     }
 
-    public NotebooksCategoryPage openNotebooksCategoryPage(){
+    public NotebooksCategoryPage openNotebooksCategoryPage() {
         moveToNotebookCategory();
         helpActions.waitForElement(notebooks);
-        notebooks.click();
+        helpActions.moveToElementAndClick(notebooks);
         return new NotebooksCategoryPage(driver);
     }
 
+    @Override
     public void validatePage() {
-        if(!driver.getTitle().contains("Интернет-магазин ROZETKA")){
+        if (!driver.getTitle().contains("Интернет-магазин ROZETKA")) {
             throw new SkipException("Wrong page!");
         }
     }

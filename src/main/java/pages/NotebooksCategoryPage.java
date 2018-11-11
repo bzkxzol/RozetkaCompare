@@ -19,12 +19,12 @@ public class NotebooksCategoryPage implements IPage {
         validatePage();
     }
 
-    public SSDNotebooksMarketPage openSSDNotebooksMarketPage(){
+    public SSDNotebooksMarketPage openSSDNotebooksMarketPage() {
         notebooksSSD.click();
         return new SSDNotebooksMarketPage(driver);
     }
 
-
+    @Override
     public void validatePage() {
         if (!driver.getTitle().contains("Ноутбуки - Rozetka.ua")) {
             throw new SkipException("Wrong page!");

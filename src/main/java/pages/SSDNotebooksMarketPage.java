@@ -16,6 +16,11 @@ public class SSDNotebooksMarketPage implements IPage {
     @FindBy(xpath = ".//*[@class='g-i-tile g-i-tile-catalog']")
     private List<WebElement> allMarketItems;
 
+    @FindBy(xpath = ".//*[@id='comparison']")
+    private WebElement comparisonList;
+
+    @FindBy(xpath = ".//*[@class='btn-link-to-compare']/a")
+    private WebElement comparisonButton;
 
     private WebDriver driver;
     private HelpActions helpActions;
@@ -27,20 +32,30 @@ public class SSDNotebooksMarketPage implements IPage {
         helpActions = new HelpActions(driver);
     }
 
-    public void addFirstTwoItemsToCompare() {
+    private void pickFirstTwoItemsToCompare() {
         List<WebElement> twoMarketItems = allMarketItems.stream().filter(p ->
                 p.findElement(By.xpath(".//*[@class='g-i-tile-i-box']/input")).getAttribute("value").equals("001")
                         || p.findElement(By.xpath(".//*[@class='g-i-tile-i-box']/input")).getAttribute("value").equals("002"))
                 .collect(Collectors.toList());
-        for (WebElement item : twoMarketItems){
-           WebElement subElement =  item.findElement(By.xpath(".//*[@class='g-tools-to-compare-label']/span"));
-           helpActions.moveToElement(subElement);
-           subElement.click();
-           helpActions.timeOut(300);
+        for (WebElement item : twoMarketItems) {
+            WebElement subElement = item.findElement(By.xpath(".//*[@class='g-tools-to-compare-label']/span"));
+            helpActions.moveToElement(subElement);
+            helpActions.timeOut(1000);
+            subElement.click();
+            helpActions.timeOut(1000);
         }
     }
 
+    public ComparisonPage compareTwoItems() {
+        pickFirstTwoItemsToCompare();
+        comparisonList.click();
+        helpActions.waitForElement(comparisonButton);
+        comparisonButton.click();
+        return new ComparisonPage(driver);
 
+    }
+
+    @Override
     public void validatePage() {
         if (!driver.getTitle().contains("Ноутбуки с SSD")) {
             throw new SkipException("Wrong page!");

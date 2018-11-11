@@ -16,22 +16,22 @@ public class HelpActions {
     }
 
 
-    public void waitForElement(WebElement element){
+    public void waitForElement(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void moveToElement(WebElement element){
+    public void moveToElement(WebElement element) {
         Actions action = new Actions(driver);
         action.moveToElement(element).build().perform();
     }
 
-    public void moveToElementAndClick(WebElement element){
+    public void moveToElementAndClick(WebElement element) {
         Actions action = new Actions(driver);
         action.moveToElement(element).click().build().perform();
     }
 
-    public void timeOut(long millis){
+    public void timeOut(long millis) {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
