@@ -1,0 +1,16 @@
+12-11-2018 14:00:18.340 INFO  - Test started!
+12-11-2018 14:00:18.848 INFO  - Test on Main page!
+12-11-2018 14:00:20.898 INFO  - Move to element Ноутбуки и компьютеры
+12-11-2018 14:00:21.556 INFO  - Move to element Ноутбуки and click in it
+12-11-2018 14:00:23.435 INFO  - Test on Notebooks category page!
+12-11-2018 14:00:23.477 INFO  - Test click on Ноутбуки с SSD
+12-11-2018 14:00:26.882 INFO  - Test on SSD notebooks market page!
+12-11-2018 14:00:28.173 INFO  - Move to element 
+12-11-2018 14:00:29.212 INFO  - Test click on 
+12-11-2018 14:00:30.332 INFO  - Move to element 
+12-11-2018 14:00:31.370 INFO  - Test click on 
+12-11-2018 14:00:32.526 INFO  - Test click on Сравнение 2
+12-11-2018 14:00:34.441 INFO  - Test click on Сравнить эти товары
+12-11-2018 14:00:36.886 INFO  - Test on Comparison page!
+12-11-2018 14:00:49.014 INFO  - Test click on Только отличия
+12-11-2018 14:00:52.942 INFO  - Test ended!
