@@ -1,6 +1,10 @@
 package pages;
 
-import helpers.HelpActions;
+import static helpers.Logger.CONSOLE;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
 
-import java.util.ArrayList;
-import java.util.List;
+import helpers.HelpActions;
+import helpers.Logger;
 
 public class ComparisonPage implements IPage {
 
@@ -27,15 +31,15 @@ public class ComparisonPage implements IPage {
         PageFactory.initElements(driver, this);
         validatePage();
         helpActions = new HelpActions(driver);
+        Logger.info(CONSOLE, "Test on Comparison page!");
     }
 
     public int countDiffers() {
-        comparisonList.size();
         return parseTableDataAndCountDiffers(comparisonList);
     }
 
     public int countOnlyDifferentMode() {
-        onlyDifferentButton.click();
+        helpActions.clickOnElement(onlyDifferentButton);
         return comparisonList.size();
     }
 

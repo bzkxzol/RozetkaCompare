@@ -2,13 +2,14 @@ package Compare;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import pages.ComparisonPage;
 import pages.MainPage;
 import pages.NotebooksCategoryPage;
 import pages.SSDNotebooksMarketPage;
 import settings.ChromeSettings;
 
-public class Rozetka extends ChromeSettings {
+public class RozetkaTests extends ChromeSettings {
 
     @Test
     public void compareSSDNotebooks() {

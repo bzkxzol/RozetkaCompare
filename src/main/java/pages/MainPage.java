@@ -1,11 +1,15 @@
 package pages;
 
-import helpers.HelpActions;
+import static helpers.Logger.CONSOLE;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
+
+import helpers.HelpActions;
+import helpers.Logger;
 
 public class MainPage implements IPage {
 
@@ -23,9 +27,11 @@ public class MainPage implements IPage {
         PageFactory.initElements(driver, this);
         validatePage();
         helpActions = new HelpActions(driver);
+        Logger.info(CONSOLE, "Test on Main page!");
     }
 
     private void moveToNotebookCategory() {
+        helpActions.timeOut(2000);
         helpActions.moveToElement(noteBookAndComputersCategory);
     }
 
