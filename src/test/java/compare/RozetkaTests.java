@@ -1,4 +1,4 @@
-package Compare;
+package compare;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
