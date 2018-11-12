@@ -19,7 +19,7 @@ public class HelpActions {
 
 
     public void waitForElement(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
