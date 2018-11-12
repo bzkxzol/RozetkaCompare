@@ -57,7 +57,6 @@ public class SSDNotebooksMarketPage implements IPage {
         helpActions.waitForElement(comparisonButton);
         helpActions.clickOnElement(comparisonButton);
         return new ComparisonPage(driver);
-
     }
 
     @Override

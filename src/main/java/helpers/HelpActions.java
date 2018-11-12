@@ -19,7 +19,7 @@ public class HelpActions {
 
 
     public void waitForElement(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -30,7 +30,7 @@ public class HelpActions {
     }
 
     public void moveToElementAndClick(WebElement element) {
-        Logger.info(CONSOLE, "Move to element " + element.getText().replaceAll("\n", " ") + " and click in it");
+        Logger.info(CONSOLE, "Move to element " + element.getText().replaceAll("\n", " ") + " and click on it");
         Actions action = new Actions(driver);
         action.moveToElement(element).click().build().perform();
 

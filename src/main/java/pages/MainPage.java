@@ -37,7 +37,7 @@ public class MainPage implements IPage {
 
     public NotebooksCategoryPage openNotebooksCategoryPage() {
         moveToNotebookCategory();
-        helpActions.timeOut(2000);
+        helpActions.waitForElement(notebooks);
         helpActions.moveToElementAndClick(notebooks);
         return new NotebooksCategoryPage(driver);
     }
